@@ -9,12 +9,11 @@ through Desktop object only.
 Minimized Calculator is a process in a "Suspended" state.
 But it can be restored with some trick for invisible main window.
 """
+from pywinauto import Desktop, Application, ElementNotFoundError
+from VariablesFile import clear_button
 
-from pywinauto import Desktop, Application
-# buttons variables
-clear_button = 'clearEntry'
 
-class win10calculatorwrapper():
+class Win10CalcTest:
 
     app = None
     dlg = None
@@ -40,16 +39,28 @@ class win10calculatorwrapper():
     def close_calculator(self):
         close_button = self.dlg.child_window(auto_id='Close')
         close_button.click()
+        self.dlg.close()
+
+    def verify_calculator_is_opened(self, expected):
+        try:
+            if expected:
+                return self.dlg.child_window(auto_id="CalculatorResults").wait('visible', 5)
+            else:
+                return self.dlg.child_window(auto_id="CalculatorResults").wait_not('visible', 5)
+        except ElementNotFoundError:
+            if expected:
+                return False
+            else:
+                return True
 
 
 if __name__ == "__main__":
-    calc = win10calculatorwrapper()
+    calc = Win10CalcTest()
     calc.keyboard_input('2*3=')
     calc.validate_result('6')
     calc.press_buttons(clear_button)
     calc.validate_result('0')
     calc.close_calculator()
-# dlg.print_control_identifiers()
 
 # dlg.minimize()
 # Desktop(backend="uia").window(title='Calculator', visible_only=False).restore()
