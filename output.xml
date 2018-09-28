@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.3 on win32)" generated="20180928 07:38:55.939">
+<suite id="s1" name="Tests" source="C:\Nicu\repos\Win10CalcAutomationRF\tests">
+<suite id="s1-s1" name="Suite0-Basic Operations" source="C:\Nicu\repos\Win10CalcAutomationRF\tests\suite0-basic_operations.robot">
+<test id="s1-s1-t1" name="Type numbers operation and press enter">
+<kw name="validate calculator is opened">
+<arguments>
+<arg>${True}</arg>
+</arguments>
+<msg timestamp="20180928 07:38:56.431" level="TRACE">Arguments: [ ${expected}=True ]</msg>
+<kw name="Verify Calculator Is Opened" library="Win10CalcTest">
+<arguments>
+<arg>${expected}</arg>
+</arguments>
+<msg timestamp="20180928 07:38:56.431" level="TRACE">Arguments: [ True ]</msg>
+<msg timestamp="20180928 07:38:57.715" level="TRACE">Return: &lt;uiawrapper.UIAWrapper - 'Display is 0', Static, -7381422644827573522&gt;</msg>
+<status status="PASS" starttime="20180928 07:38:56.431" endtime="20180928 07:38:57.715"></status>
+</kw>
+<msg timestamp="20180928 07:38:57.719" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:56.431" endtime="20180928 07:38:57.719"></status>
+</kw>
+<kw name="When user types operation">
+<arguments>
+<arg>2*3=</arg>
+</arguments>
+<msg timestamp="20180928 07:38:57.719" level="TRACE">Arguments: [ ${operation}='2*3=' ]</msg>
+<kw name="Keyboard Input" library="Win10CalcTest">
+<arguments>
+<arg>${operation}</arg>
+</arguments>
+<msg timestamp="20180928 07:38:57.719" level="TRACE">Arguments: [ '2*3=' ]</msg>
+<msg timestamp="20180928 07:38:58.092" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:57.719" endtime="20180928 07:38:58.092"></status>
+</kw>
+<msg timestamp="20180928 07:38:58.092" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:57.719" endtime="20180928 07:38:58.092"></status>
+</kw>
+<kw name="Then user validates result">
+<arguments>
+<arg>6</arg>
+</arguments>
+<msg timestamp="20180928 07:38:58.092" level="TRACE">Arguments: [ ${expected result}='6' ]</msg>
+<kw name="Validate Result" library="Win10CalcTest">
+<arguments>
+<arg>${expected_result}</arg>
+</arguments>
+<msg timestamp="20180928 07:38:58.092" level="TRACE">Arguments: [ '6' ]</msg>
+<msg timestamp="20180928 07:38:58.569" level="INFO">Result Display is 6 is the expected one!</msg>
+<msg timestamp="20180928 07:38:58.569" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:58.092" endtime="20180928 07:38:58.569"></status>
+</kw>
+<msg timestamp="20180928 07:38:58.569" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:58.092" endtime="20180928 07:38:58.569"></status>
+</kw>
+<kw name="Given user clears calculator">
+<msg timestamp="20180928 07:38:58.573" level="TRACE">Arguments: [  ]</msg>
+<kw name="Press Buttons" library="Win10CalcTest">
+<arguments>
+<arg>${clear_button}</arg>
+</arguments>
+<msg timestamp="20180928 07:38:58.573" level="TRACE">Arguments: [ 'clearEntry' ]</msg>
+<msg timestamp="20180928 07:38:59.102" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:58.573" endtime="20180928 07:38:59.102"></status>
+</kw>
+<msg timestamp="20180928 07:38:59.102" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:58.569" endtime="20180928 07:38:59.102"></status>
+</kw>
+<kw name="Then user validates result">
+<arguments>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20180928 07:38:59.106" level="TRACE">Arguments: [ ${expected result}='0' ]</msg>
+<kw name="Validate Result" library="Win10CalcTest">
+<arguments>
+<arg>${expected_result}</arg>
+</arguments>
+<msg timestamp="20180928 07:38:59.106" level="TRACE">Arguments: [ '0' ]</msg>
+<msg timestamp="20180928 07:38:59.598" level="INFO">Result Display is 0 is the expected one!</msg>
+<msg timestamp="20180928 07:38:59.598" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:59.106" endtime="20180928 07:38:59.602"></status>
+</kw>
+<msg timestamp="20180928 07:38:59.602" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:59.106" endtime="20180928 07:38:59.602"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="teardown">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<msg timestamp="20180928 07:38:59.602" level="TRACE">Arguments: [ 'Take Screenshot' | '${TEST_NAME}' ]</msg>
+<msg timestamp="20180928 07:38:59.602" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:59.602" endtime="20180928 07:38:59.602"></status>
+</kw>
+<status status="PASS" starttime="20180928 07:38:56.431" endtime="20180928 07:38:59.602" critical="yes"></status>
+</test>
+<kw name="user closes calculator" type="teardown">
+<msg timestamp="20180928 07:38:59.606" level="TRACE">Arguments: [  ]</msg>
+<kw name="Close Calculator" library="Win10CalcTest">
+<msg timestamp="20180928 07:38:59.606" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20180928 07:39:00.362" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:59.606" endtime="20180928 07:39:00.366"></status>
+</kw>
+<msg timestamp="20180928 07:39:00.366" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20180928 07:38:59.606" endtime="20180928 07:39:00.366"></status>
+</kw>
+<doc>Verifies basic operations for Windows10 calculator</doc>
+<status status="PASS" starttime="20180928 07:38:55.979" endtime="20180928 07:39:00.366"></status>
+</suite>
+<status status="PASS" starttime="20180928 07:38:55.943" endtime="20180928 07:39:00.366"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Suite0-Basic Operations">Tests.Suite0-Basic Operations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
