@@ -1,0 +1,2 @@
+--loglevel  trace
+--suite  tests
